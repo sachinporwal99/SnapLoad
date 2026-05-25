@@ -68,7 +68,7 @@ router.get('/', async (req, res) => {
     });
   } catch (err) {
     console.error('[info error]', err.message);
-    res.status(500).json({ error: 'Please enter a correct video URL' });
+    res.status(500).json({ error: err.message || 'Please enter a correct video URL' });
   }
 });
 

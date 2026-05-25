@@ -18,7 +18,7 @@ function getCookiesFlag() {
   }
 }
 
-const EXTRACTOR_ARGS = '--extractor-args "youtube:player_client=android,web"';
+const EXTRACTOR_ARGS = '--extractor-args "youtube:player_client=android_vr,ios,web"';
 
 function runYtDlp(args) {
   return new Promise((resolve, reject) => {
