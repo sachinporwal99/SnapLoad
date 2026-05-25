@@ -18,7 +18,7 @@ function getCookiesFlag() {
   }
 }
 
-const EXTRACTOR_ARGS = '--extractor-args "youtube:player_client=android_vr,ios,web"';
+const EXTRACTOR_ARGS = '--extractor-args "youtube:player_client=android_vr,ios,web" --geo-bypass';
 
 function runYtDlp(args) {
   return new Promise((resolve, reject) => {

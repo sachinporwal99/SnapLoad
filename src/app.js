@@ -12,6 +12,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(PUBLIC_DIR));
 
+app.get('/api/health', (_req, res) => res.json({ status: 'ok' }));
+
 app.use('/api/info', infoRouter);
 app.use('/api/download', downloadRouter);
 app.use('/api/mp3', mp3Router);

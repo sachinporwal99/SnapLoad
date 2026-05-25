@@ -5,8 +5,8 @@ let selectedFormat = 'video';
 // ── Server status ─────────────────────────────────────────────────────────────
 async function checkServer() {
   try {
-    await fetch(`${API}/api/info?url=ping`, { signal: AbortSignal.timeout(3000) });
-    setServerStatus(true);
+    const res = await fetch(`${API}/api/health`, { signal: AbortSignal.timeout(3000) });
+    setServerStatus(res.ok);
   } catch {
     setServerStatus(false);
   }
