@@ -68,7 +68,18 @@ router.get('/', async (req, res) => {
     });
   } catch (err) {
     console.error('[info error]', err.message);
-    res.status(500).json({ error: err.message || 'Please enter a correct video URL' });
+    const msg = err.message || '';
+    let userError = 'Failed to fetch video. Please check the URL and try again.';
+    if (msg.includes('429') || msg.includes('Too Many Requests')) {
+      userError = 'YouTube is rate-limiting this server. Please try again in a few minutes.';
+    } else if (msg.includes('not available in your country')) {
+      userError = 'This video is not available in the server\'s region (geo-blocked).';
+    } else if (msg.includes('Private video') || msg.includes('private')) {
+      userError = 'This video is private and cannot be downloaded.';
+    } else if (msg.includes('Sign in') || msg.includes('bot')) {
+      userError = 'YouTube is requiring sign-in verification. Please try again shortly.';
+    }
+    res.status(500).json({ error: userError });
   }
 });
 
