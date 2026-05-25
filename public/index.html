@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SnapLoad — Video Downloader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <div id="server-status">
+    <div class="dot" style="background:#888" id="status-dot"></div>
+    <span id="status-label">Checking server…</span>
+  </div>
+
+  <div class="page">
+
+    <nav>
+      <div class="logo">Snap<span>Load</span></div>
+      <div class="nav-pills">
+        <a class="nav-pill" href="#how">How it works</a>
+        <a class="nav-pill" href="#features">Features</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-badge">✦ Powered by yt-dlp · Full HD merging</div>
+      <h1>Download any<br>video <em>instantly</em></h1>
+      <p class="hero-sub">
+        Paste a link from YouTube, Instagram, TikTok, Twitter and 1000+ sites.
+        Full quality with video + audio merged automatically.
+      </p>
+
+      <div class="platforms">
+        <div class="platform-chip"><div class="dot" style="background:#ff0000"></div>YouTube</div>
+        <div class="platform-chip"><div class="dot" style="background:#e1306c"></div>Instagram</div>
+        <div class="platform-chip"><div class="dot" style="background:#1da1f2"></div>Twitter / X</div>
+        <div class="platform-chip"><div class="dot" style="background:#010101"></div>TikTok</div>
+        <div class="platform-chip"><div class="dot" style="background:#1ab7ea"></div>Vimeo</div>
+        <div class="platform-chip"><div class="dot" style="background:#ff4500"></div>Reddit</div>
+        <div class="platform-chip"><div class="dot" style="background:#aaa"></div>1000+ more</div>
+      </div>
+
+      <div class="input-card">
+        <input class="url-input" id="urlInput" type="url"
+          placeholder="Paste video URL here…" autocomplete="off" spellcheck="false" />
+        <button class="paste-btn" onclick="pasteUrl()">⌘ Paste</button>
+        <button class="fetch-btn" id="fetchBtn" onclick="fetchVideo()">Fetch Video ↗</button>
+      </div>
+
+      <div class="format-row">
+        <span class="format-label">Prefer:</span>
+        <div class="format-options">
+          <div class="format-opt active" onclick="selectFormat(this,'video')">Video (MP4)</div>
+          <div class="format-opt" onclick="selectFormat(this,'audio')">Audio Only (MP3)</div>
+        </div>
+      </div>
+
+      <div id="status-area"></div>
+    </div>
+
+    <div id="how"></div>
+    <div class="section-title">How it works</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Copy the URL</div>
+        <div class="step-desc">Find your video on any platform and copy its link from the address bar.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Paste & Fetch</div>
+        <div class="step-desc">Paste the URL into SnapLoad and hit Fetch to see all available quality options.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Click & Download</div>
+        <div class="step-desc">Pick a resolution. Video + audio are merged automatically — full quality every time.</div>
+      </div>
+    </div>
+
+    <div id="features"></div>
+    <div class="section-title">Why SnapLoad?</div>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(124,77,255,.12)">⚡</div>
+        <div class="feature-title">Full HD Quality</div>
+        <div class="feature-desc">Merges separate video + audio streams for true 1080p/4K — not just 360p combined.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(0,229,255,.1)">🔒</div>
+        <div class="feature-title">Private & Local</div>
+        <div class="feature-desc">Self-hosted. Your URLs and downloads never leave your own machine.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(0,230,118,.1)">🌐</div>
+        <div class="feature-title">1000+ Sites</div>
+        <div class="feature-desc">Powered by yt-dlp, the most comprehensive video downloader library.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(255,64,129,.1)">🎵</div>
+        <div class="feature-title">MP3 Extraction</div>
+        <div class="feature-desc">Download audio tracks as high-quality MP3 with one click.</div>
+      </div>
+    </div>
+
+    <footer>
+      <p>For personal use only. Respect copyright and platform terms of service.</p>
+      <p style="margin-top:12px">Powered by <a href="https://github.com/yt-dlp/yt-dlp" target="_blank">yt-dlp</a></p>
+    </footer>
+
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
