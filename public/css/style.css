@@ -334,10 +334,40 @@ footer a { color: var(--accent); text-decoration: none; }
 
 /* Responsive */
 @media (max-width: 600px) {
-  .steps { grid-template-columns: 1fr; }
-  .input-card { flex-wrap: wrap; }
-  .fetch-btn { width: 100%; }
-  h1 { font-size: 36px; letter-spacing: -1px; }
+  .page { padding: 0 16px 60px; }
+
+  nav { padding: 20px 0 0; }
   nav .nav-pills { display: none; }
-  #server-status { display: none; }
+  #server-status { top: 12px; right: 12px; font-size: 11px; padding: 5px 10px; }
+
+  .hero { padding: 48px 0 32px; }
+  h1 { font-size: 32px; letter-spacing: -1px; }
+  .hero-sub { font-size: 15px; }
+
+  .input-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 18px;
+  }
+  .url-input { padding: 12px 12px; font-size: 14px; }
+  .paste-btn { text-align: center; border-radius: 12px; padding: 10px; }
+  .fetch-btn { width: 100%; border-radius: 12px; padding: 14px; }
+
+  .format-row { gap: 8px; }
+
+  .result-meta { flex-direction: column; gap: 12px; }
+  .thumb-wrap { width: 100%; height: 180px; }
+
+  .dl-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  .steps { grid-template-columns: 1fr; }
+  .step { padding: 24px 20px; }
+
+  .features { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .feature-card { padding: 16px; }
+
+  .dl-section { padding: 16px; }
+  .status-box { padding: 16px; gap: 12px; }
 }
